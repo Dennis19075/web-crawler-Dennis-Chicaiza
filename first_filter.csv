@@ -1,27 +1,27 @@
 title,rank,comments,points
-QuestDB (YC S20) Is Hiring a Technical Writer,14,0,0
-Accelerate Python code 100x by import taichi as ti,15,0,6
-Now Be Still: Dispatching Shakespeare’s Bodies,21,0,8
-Go Developer Survey 2022 Q2 Results,8,1,11
-Pure recursively defined sets without looping in Haskell,18,1,11
-Cells Form into ‘Xenobots’ on Their Own,27,2,21
-’Why Am I Not Rich and Famous?’ The Delusion of Our Times,29,2,7
-It's time to upscale FSR 2 even further: Meet FSR 2.1,12,3,16
-How A Bedouin Tracker Sees the Desert,20,7,30
-Ask HN: Why doesn’t Apple allow torrent clients on the app store?,24,7,9
-Digitizing Smell: Using Molecular Maps to Understand Odor,19,10,80
-The Changes for the 2nd Edition of “Code”,28,13,58
-"Fresh 1.1 – Automatic JSX, plugins, DevTools, and more",6,19,72
-Show HN: Ringer – Get and provide expert help on Open Source Software,13,25,52
-IKEA’s knowledge graph and why it has three layers,10,26,92
-My VM is Lighter (and Safer) than your Container (2017),4,27,114
-Who controls the Internet? And should they? (2021),16,38,88
-Planting trees not always an effective way of binding carbon dioxide,2,39,47
-A byte string library for Rust,17,40,155
-Here come the bendable TVs and monitors that no one asked for,5,45,48
-Kamby – A programming language based on Lisp that doesn't seems like Lisp,25,45,140
-I tracked everything I read on the internet for a year,26,99,218
-Half of Japan's LDP lawmakers had ties with Unification Church,11,118,154
-Reddit's favorite products in one place,1,153,355
-What to read to understand central banking,22,154,226
-Excuse me but why are you eating so many frogs,7,215,443
+QuestDB (YC S20) Is Hiring a Technical Writer,16,0,0
+Now Be Still: Dispatching Shakespeare’s Bodies,27,0,10
+Attacking Firecracker: AWS' MicroVM Monitor Written in Rust,7,1,15
+Cells Form into ‘Xenobots’ on Their Own,30,2,26
+Pure recursively defined sets without looping in Haskell,20,3,16
+It's time to upscale FSR 2 even further: Meet FSR 2.1,11,7,28
+How A Bedouin Tracker Sees the Desert,23,11,34
+Digitizing Smell: Using Molecular Maps to Understand Odor,22,13,89
+Go Developer Survey 2022 Q2 Results,1,17,63
+Ask HN: Easing wife onto Linux laptop How to?,25,18,9
+Accelerate Python code by importing Taichi,4,20,77
+The Changes for the 2nd Edition of “Code”,28,20,80
+Show HN: Ringer – Get and provide expert help on Open Source Software,17,26,60
+‘Why Am I Not Rich and Famous?’ The Delusion of Our Times,13,27,35
+"Fresh 1.1 – Automatic JSX, plugins, DevTools, and more",9,29,87
+IKEA’s knowledge graph and why it has three layers,14,30,105
+My VM is Lighter (and Safer) than your Container (2017),6,43,135
+Who controls the Internet? And should they? (2021),18,43,102
+A byte string library for Rust,21,45,170
+Kamby – A programming language based on Lisp that doesn't seems like Lisp,29,45,142
+Planting trees not always an effective way of binding carbon dioxide,8,64,64
+Here come the bendable TVs and monitors that no one asked for,19,91,73
+Half of Japan's LDP lawmakers had ties with Unification Church,15,143,179
+What to read to understand central banking,24,171,239
+Reddit's favorite products in one place,2,176,423
+Excuse me but why are you eating so many frogs,10,227,468
