@@ -3,6 +3,8 @@ from requests_html import HTMLSession
 
 import re
 
+from operator import itemgetter
+
 # Creating a class to instance
 # class Entry:
 #     def __init__(self, title, rank, comments, score):
@@ -11,7 +13,7 @@ import re
 #         self.comments = comments
 #         self.score = score
 
-# entries lists
+# entries list
 entries_titles = []
 entries_body = []
 entries_res = []
@@ -25,6 +27,7 @@ r = session.get(URL)
 def get_entry_head_parsed(entry):
     title = entry.find('a.titlelink', first=True).text.strip()
     rank = entry.find('span.rank', first=True).text.strip()
+    rank = re.sub("\D", "", rank)
 
     entryHead = {
     'title': title,
@@ -37,19 +40,18 @@ def get_entry_body_parsed(entry):
 
     try:
         points = entry.find('span.score', first=True).text.strip()
+        points = re.sub("\D", "", points) #extract only digits
     except AttributeError as err:
-        points = 'None'
+        points = '0'
 
     comments = entry.find('td.subtext', first=True).text.strip()
     comment_splited = comments.split('| ') #it is a list
-    comment = comment_splited[len(comment_splited)-1].replace(u'\xa0comments', u'') #extract just the comments and remove the extra bad chars
-    if comment[0].isdigit():
-        comment=int(comment)
-         #clean the entries do not have comments
-    else:
-        # if there are no comments, zero
-        comment = 0
-  
+    comment = comment_splited[len(comment_splited)-1].replace(u'\xa0', u'') #extract just the comments and remove the extra bad chars cant find comments because of the variant comment and comments
+    comment = re.sub("\D", "", comment) #extract only digits
+    
+    if comment == "": #check if comments are empty
+        comment = "0"
+
     entryBody = {
     'points': points,
     'comments': comment
@@ -75,9 +77,9 @@ def merge_dics(dic1, dic2):
     for index in range(0,len(dic1)):
         entry = {
             'title': dic1[index]['title'],
-            'rank': dic1[index]['rank'],
-            'comments': dic2[index]['comments'],
-            'points': dic2[index]['points']
+            'rank': int(dic1[index]['rank']),
+            'comments': int(dic2[index]['comments']),
+            'points': int(dic2[index]['points'])
         }
         entries_res.append(entry)
     return entries_res
@@ -88,20 +90,19 @@ all_entries = merge_dics(entries_titles, entries_body)
 # print(all_entries)
 # print(len(all_entries))
 
-
+# FILTERS
 # Filter all previous entries with more than five words in the title ordered by the number of comments first.
 def filter_ordered_by_comments(entryList):
     resList = []
     for entry in entryList:
         if len(entry['title'].strip().split(" ")) > 5:
             resList.append(entry)
-    resList = sorted(resList, key=lambda d: d['comments']) 
-    return resList
+    return sorted(resList, key=itemgetter('comments'))
 
 first_filter = filter_ordered_by_comments(all_entries)
 
-print(first_filter)
-print(len(first_filter))
+# print(first_filter)
+# print(len(first_filter))
 
 
 # Filter all previous entries with less than or equal to five words in the title ordered by points.
@@ -110,10 +111,9 @@ def filter_ordered_by_points(entryList):
     for entry in entryList:
         if len(entry['title'].strip().split(" ")) <= 5:
             resList.append(entry)
-    resList = sorted(resList, key=lambda d: d['points']) 
-    return resList
+    return sorted(resList, key=itemgetter('points'))
 
 second_filter = filter_ordered_by_points(all_entries)
 
-print(second_filter)
-print(len(second_filter))
+# print(second_filter)
+# print(len(second_filter))
