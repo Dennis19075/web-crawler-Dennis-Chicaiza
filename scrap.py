@@ -41,19 +41,36 @@ print(len(rank))
 
 soup = BeautifulSoup(page.content, 'html.parser')
 
-raw_comments = soup.find_all('a', {'href': re.compile(r'item\?id=')}, text = re.compile('comments'))
+# raw_comments = soup.find_all('a', {'href': re.compile(r'item\?id=')}, {'href': re.compile(r'item\?id=')}, text = re.compile('discuss|comment|comments'))
 
-print('COMMENTS')
-print(raw_comments)
-print(len(raw_comments))
+# raw_comments = soup.find_all('td', class_='subtext')
 
-#Point
-soup = BeautifulSoup(page.content, 'html.parser')
+# for raw in raw_comments:
+#     print(raw)
 
-raw_points = soup.find_all('span', class_='score')
-print('POINTS')
-print(raw_points)
-print(len(raw_points))
+print(len(soup.find_all('td', class_='subtext')))
+
+# print('COMMENTS')
+# print(raw_comments)
+# print(len(raw_comments))
+
+# comments = list()
+
+# for index in range(0,len(raw_comments)):
+#     value = raw_comments[index].text
+#     # removing \xa0 from the comments
+#     value = value.replace(u'\xa0', u' ')
+#     comments.append(value)
+    # print(str(raw_comments[index].text))
+# print(comments)
+# print(len(comments))
+# #Point
+# soup = BeautifulSoup(page.content, 'html.parser')
+
+# raw_points = soup.find_all('span', class_='score')
+# print('POINTS')
+# print(raw_points)
+# print(len(raw_points))
 
 
 #TODO
